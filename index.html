@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to CS2 E-Sports Hub</h1>
+    <p class="lead">Your one-stop platform for CS2 player profiles, strategy creation, and NFT player cards.</p>
+    <hr class="my-4">
+    <p>Join our community and take your CS2 experience to the next level!</p>
+    {% if not current_user.is_authenticated %}
+        <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}" role="button">Get Started</a>
+    {% else %}
+        <a class="btn btn-primary btn-lg" href="{{ url_for('profile') }}" role="button">View Profile</a>
+    {% endif %}
+</div>
+{% endblock %}
